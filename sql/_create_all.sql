@@ -1,0 +1,1 @@
+source create_party_types.sql

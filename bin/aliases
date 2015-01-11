@@ -1,0 +1,1 @@
+alias hadb='mysql -uhudsonartists -pFireFlower5 -hlocalhost --database=hudsonartists'

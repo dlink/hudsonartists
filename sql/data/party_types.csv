@@ -1,0 +1,4 @@
+id,code,name,description,active,created
+0,unknown,Unknown,Unknown,1,2015-01-11
+1,artist,Artist,Artist,1,2015-01-11
+2,group,Group,Artist Group,1,2015-01-11
