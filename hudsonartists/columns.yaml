@@ -7,5 +7,32 @@ columns:
    - name    : id
      default : true
 
+   - name    : name
+     select  : >
+        case
+           when party_type_id = 1 then
+              concat_ws(' ', p.last_name, p.first_name)
+           else
+              p.company
+        end
+     aliases : p
+     default : true
+
+   - name    : first_name
+     
+   - name    : middle_name
+
    - name    : last_name
+
+   - name    : type
+     select  : pt.name
+     default : true
+
+   #- name    : phone
+   #  default : true
+
+   - name    : email
+     default : true
+
+   - name    : website
      default : true

@@ -1,3 +1,4 @@
 id,party_type_id,first_name,middle_name,last_name,company,email,website,created
 1,2,,,,Beacon Artist Union (BAU),info@baugallery.com,baugallery.com,2015-01-11
 2,1,Gary,,Jacketti,,jacketti@optonline.net,jacketti.com,2015-01-11
+3,1,Carla,,Goldberg,,goldbergstudioart@gmail.com,carlagoldberg.com
