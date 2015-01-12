@@ -9,3 +9,4 @@ id,party_type_id,first_name,middle_name,last_name,company,email,website,created
 8,1,Erica,Leigh,Caginalp,,,,2015-01-11
 9,1,Kirston,,Lyon,,,,2015-01-11
 10,1,David,,Link,,dvlink@gmail.com,crowfly.net,2015-01-11
+11,1,Art,,Murphy,,,2015-01-11
