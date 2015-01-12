@@ -28,6 +28,11 @@ columns:
      select  : pt.name
      default : true
 
+   - name    : location
+     select  : concat_ws(', ', a.city, a.state)
+     aliases : a
+     default : true
+
    #- name    : phone
    #  default : true
 
@@ -36,3 +41,10 @@ columns:
 
    - name    : website
      default : true
+
+   - name    : added
+     select  : date(p.created)
+     aliases : p
+     default : true
+
+   - name    : last_updated

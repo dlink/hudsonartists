@@ -1,3 +1,5 @@
 table_joins:
    pt:
       clause: join party_types pt on p.party_type_id = pt.id
+   a:
+      clause: left join addresses a on p.id = a.party_id
