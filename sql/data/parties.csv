@@ -2,11 +2,13 @@ id,party_type_id,first_name,middle_name,last_name,company,email,website,created
 1,2,,,,Beacon Artist Union (BAU),info@baugallery.com,baugallery.com,2015-01-11
 2,1,Gary,,Jacketti,,jacketti@optonline.net,jacketti.com,2015-01-11
 3,1,Carla,,Goldberg,,goldbergstudioart@gmail.com,carlagoldberg.com,2015-01-11
-4,1,Grey,,Zeien,,,,2015-01-11
-5,1,Tom,,Holms,,,,2015-01-11
-6,1,Herman,,Roggeman,,,,2015-01-11
+4,1,Grey,,Zeien,,grey@greyprinting.com,greyzeien.com,2015-01-11
+5,1,Tom,,Holms,,genus@ptd.net,tomholmes.com,2015-01-11
+6,1,Herman,,Roggeman,,hroggeman22@gmail.com ,hermanroggeman.com,2015-01-11
 7,1,Russell,,Ritell,,,,2015-01-11
-8,1,Erica,Leigh,Caginalp,,,,2015-01-11
+8,1,Erica,Leigh,Caginalp,,erica_leigh@yahoo.com,baugallery.com/artists/erica-leigh-caginalp,2015-01-11
 9,1,Kirston,,Lyon,,,,2015-01-11
-10,1,David,,Link,,dvlink@gmail.com,crowfly.net,2015-01-11
-11,1,Art,,Murphy,,,2015-01-11
+10,1,David,,Link,,dvlink@gmail.com,davidlinkart.com,2015-01-11
+11,1,Art,,Murphy,,artmurphy1@mac.com,artmurphy.com,2015-01-11
+14,1,David,,Provan,,dapro@optonline.net,davidprovan.com,2015-01-11
+15,3,,,,Bau Gallery,info@baugallery.com,baugallery.com,2015-01-11

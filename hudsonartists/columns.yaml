@@ -11,7 +11,7 @@ columns:
      select  : >
         case
            when party_type_id = 1 then
-              concat_ws(' ', p.last_name, p.first_name)
+              concat_ws(' ', p.first_name, p.last_name)
            else
               p.company
         end
@@ -23,14 +23,20 @@ columns:
    - name    : middle_name
 
    - name    : last_name
+     select  : p.last_name
 
    - name    : type
      select  : pt.name
      default : true
 
+   - name    : disciplines
+     select  : ds.names
+     default : true
+
    - name    : location
      select  : concat_ws(', ', a.city, a.state)
      aliases : a
+     group_by: sum
      default : true
 
    #- name    : phone
@@ -40,6 +46,7 @@ columns:
      default : true
 
    - name    : website
+     link    : http://%s
      default : true
 
    - name    : added
@@ -48,3 +55,11 @@ columns:
      default : true
 
    - name    : last_updated
+
+   - name   : count
+     select : '*'
+     aliases: p
+     mode   : aggregate
+     aggregate_func: count
+     type   : integer
+     default: true

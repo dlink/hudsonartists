@@ -1,4 +1,24 @@
 controls:
    - name   : name
-     filter : concat_ws(' ', p.first_name, p.last_name, p.company) like '%{value}%'
+     filter : >
+        concat_ws(' ', p.first_name, p.last_name, p.company) like '%{value}%'
      aliases: p
+
+   - name   : type
+     type   : menu
+     menu   :
+        0: All
+        1: Artist
+        2: Group
+        3: Gallery
+     filter : pt.id = {value}
+
+   - name   : discipline
+     type   : menu
+     menu   :
+        0: All
+        1: Cermanics
+        2: Painting
+        3: Photography
+        4: Sculpture
+     filter : d.id = {value}

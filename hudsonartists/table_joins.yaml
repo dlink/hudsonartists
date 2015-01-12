@@ -3,3 +3,21 @@ table_joins:
       clause: join party_types pt on p.party_type_id = pt.id
    a:
       clause: left join addresses a on p.id = a.party_id
+   pd:
+      clause: left join party_disciplines pd on p.id = pd.party_id
+   d:
+      require: pd
+      clause : left join disciplines d on pd.discipline_id = d.id
+   ds:
+      clause: >
+         join (
+            select
+               p.id as party_id,
+               group_concat(d.name separator ', ') as names
+            from
+               parties p
+               left join party_disciplines pd on p.id = pd.party_id
+               left join disciplines d on pd.discipline_id = d.id
+            group by
+               p.id
+            ) as ds on p.id = ds.party_id

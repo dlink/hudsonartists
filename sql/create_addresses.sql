@@ -9,6 +9,7 @@ create table addresses (
   address2          varchar(255)      ,
   city              varchar(255)      ,
   state             varchar(255)      ,
+  zipcode           varchar(10)       ,
   prime             integer unsigned  ,
   
   created           datetime          not null ,
