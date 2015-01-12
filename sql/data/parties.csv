@@ -1,0 +1,3 @@
+id,party_type_id,first_name,middle_name,last_name,company,email,website,created
+0,1,,,Unknown Artist,,,,2015-01-11
+1,2,,,,Beacon Artist Union (BAU),info@baugallery.com,baugallery.com,2014-01-11
