@@ -4,6 +4,8 @@ id,party_id,address1,address2,city,state,prime,created
 3,3,,,Cold Spring,NY,1,10516,2015-01-11
 4,4,,,Cold Spring,NY,1,10516,2015-01-11
 6,6,,,Putnam Valley,NY,1,10579,2015-01-11
+7,7,,,Cold Spring,NY,1,10516,2015-01-11
 10,10,205 Bell Hollow Road,,Putnam Valley,NY,10579,1,2015-01-11
 11,11,,,Woodstock,NY,,1,2015-01-11
 14,14,200 Jaycox Road,,Cold Spring,NY,10516,1,2015-01-11
+15,15,506 Main Street,,Beacon,NY,,1,2015-01-11

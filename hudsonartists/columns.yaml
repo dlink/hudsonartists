@@ -5,16 +5,12 @@ columns:
      type    : separator
 
    - name    : id
-     default : true
 
    - name    : name
      select  : >
-        case
-           when party_type_id = 1 then
-              concat_ws(' ', p.first_name, p.last_name)
-           else
-              p.company
-        end
+        if(p.party_type_id =1,
+           concat_ws(' ', p.first_name, p.last_name),
+           p.company)
      aliases : p
      default : true
 
@@ -23,7 +19,14 @@ columns:
    - name    : middle_name
 
    - name    : last_name
-     select  : p.last_name
+
+   - name    : last_name_or_company
+     select  : >
+        if(p.party_type_id =1,
+           p.last_name,
+           p.company)
+     aliases : p
+     default : true
 
    - name    : type
      select  : pt.name

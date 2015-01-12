@@ -6,7 +6,7 @@ base_table_alias: p
 debug_cgi       : false
 debug_sql       : false
 display_num_rows: 100
-sort_by         : last_name:asc
+sort_by         : last_name_or_company:asc
 
 database:
    host  : localhost
