@@ -1,0 +1,3 @@
+table_joins:
+   pt:
+      clause: join party_types pt on p.party_type_id = pt.id

@@ -1,0 +1,17 @@
+# Hudson Valley Artists Report Paramaters
+
+report_title    : Hudson Valley Artists
+base_table      : parties
+base_table_alias: p
+debug_cgi       : false
+debug_sql       : false
+display_num_rows: 100
+sort_by         : last_name:asc
+
+database:
+   host  : localhost
+   user  : hudsonartists
+   passwd: FireFlower5
+   db    : hudsonartists
+
+

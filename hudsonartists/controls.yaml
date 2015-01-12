@@ -1,0 +1,3 @@
+controls:
+   - name   : name
+     filter : p.last_name like '%{value}%s'
