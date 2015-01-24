@@ -29,16 +29,18 @@ columns:
 
    - name    : type
      select  : pt.name
+     group_by: true
      default : true
 
    - name    : disciplines
      select  : ds.names
+     group_by: true
      default : true
 
    - name    : location
      select  : concat_ws(', ', a.city, a.state)
      aliases : a
-     group_by: sum
+     group_by: true
      default : true
 
    #- name    : phone
