@@ -15,3 +15,6 @@ id,party_type_id,first_name,middle_name,last_name,company,email,website,created
 16,1,April,,DeMarco,,info@demarcostudios.com,demarcostudios.com,2015-01-12
 17,1,Jack,,Rusinek,,jackrusinek@gmail.com,picasaweb.google.com/jackrusinek,2015-01-12
 18,1,Matt,,Frieburghaus,,matt@mattfrieburghaus.com,mattfrieburghaus.com,2015-01-24
+19,3,,,,Look Art Gallery,,lookartgallery.com,2015-01-24
+20,3,,,,Gallery 66 NY,gallery66ny@gmail.com,gallery66ny.com,2015-01-24
+21,1,Barbara,,Galazzo,,info@galazzoglass.com,galazzoglass.com,2015-01-24

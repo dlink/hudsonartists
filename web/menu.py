@@ -9,8 +9,8 @@ class Menu(object):
       return target in sys.argv[0]
 
     def getMenu(self):
-        reports= [['Books', '?r=books']
-                  ]
+        reports= [] #'Books', '?r=books']
+                  #]
         this_report = sys.argv[0]
         menu_html = self.getHtml(reports)
         return div(menu_html, class_='menu')

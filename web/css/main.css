@@ -21,7 +21,7 @@
 
 body {
   margin: 0 auto;
-  font-size: 12px;
+  font-size: 14px;
   font-family: sans-serif;
   background-color: #EEEEEE;
   position: relative;
@@ -99,7 +99,8 @@ a:hover {
 } */
 
 .menu {
-  background-color: #cccccc; /*#dfffa7;*/
+  // background-color: #cccccc; /*#dfffa7;*/
+  background-color: #dfffa7;
   height: 25px;
   font-size: 12px;
   position: absolute;
@@ -200,7 +201,7 @@ table.report_table tr th {
   font-weight: bold;
   font-size: 125%;
   text-align: center; 
-  background-color: lightblue;
+  background-color: #FF5C33;
   border-left: 1px solid grey;
   border-bottom: 1px solid lightgrey;
 }
@@ -375,7 +376,7 @@ table.report_list_table th {
   left: 0;
   padding-left: 0;
   border: solid 1px gray;
-  background: #CCCCCC;
+  background: #dfffa7;
 }
 
 .menu ul.dropdown ul li {

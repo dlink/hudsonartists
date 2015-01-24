@@ -26,7 +26,6 @@ columns:
            p.last_name,
            p.company)
      aliases : p
-     default : true
 
    - name    : type
      select  : pt.name

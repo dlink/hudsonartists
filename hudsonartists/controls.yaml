@@ -22,4 +22,5 @@ controls:
         3: Photography
         4: Sculpture
         5: Digital
+        6: Glass
      filter : d.id = {value}

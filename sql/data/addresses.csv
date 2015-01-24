@@ -10,3 +10,6 @@ id,party_id,address1,address2,city,state,prime,created
 14,14,200 Jaycox Road,,Cold Spring,NY,10516,1,2015-01-11
 15,15,506 Main Street,,Beacon,NY,,1,2015-01-11
 18,18,,,Cold Spring,NY,10516,2015-01-24
+19,19,,,Cold Spring,NY,10516,2015-01-24
+20,20,,,Cold Spring,NY,10516,2015-01-24
+21,21,,,Cold Spring,NY,10516,2015-01-24
