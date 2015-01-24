@@ -9,3 +9,4 @@ id,party_id,address1,address2,city,state,prime,created
 11,11,,,Woodstock,NY,,1,2015-01-11
 14,14,200 Jaycox Road,,Cold Spring,NY,10516,1,2015-01-11
 15,15,506 Main Street,,Beacon,NY,,1,2015-01-11
+18,18,,,Cold Spring,NY,10516,2015-01-24

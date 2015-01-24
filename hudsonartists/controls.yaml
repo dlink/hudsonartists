@@ -21,4 +21,5 @@ controls:
         2: Painting
         3: Photography
         4: Sculpture
+        5: Digital
      filter : d.id = {value}
