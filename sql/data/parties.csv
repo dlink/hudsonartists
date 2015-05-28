@@ -19,3 +19,5 @@ id,party_type_id,first_name,middle_name,last_name,company,email,website,created
 20,3,,,,Gallery 66 NY,gallery66ny@gmail.com,gallery66ny.com,2015-01-24
 21,1,Barbara,,Galazzo,,info@galazzoglass.com,galazzoglass.com,2015-01-24
 22,1,Loren,,Eiferman,,loreneiferman@gmail.com,loreneiferman.com,2015-01-27
+23,1,Susan,,Zoon,,sue@zoonart.com,zoonart.com,2015-01-27
+24,1,Rafael,,Quirindongo,,rafael@rqgallery.com,rqgallery.com,2015-03-07

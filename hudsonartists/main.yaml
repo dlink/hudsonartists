@@ -1,6 +1,6 @@
 # Hudson Valley Artists Report Paramaters
 
-report_title    : Hudson Valley Artists
+report_title    : Hudson Valley Artists Register
 base_table      : parties
 base_table_alias: p
 debug_cgi       : false
