@@ -4,6 +4,9 @@ controls:
         concat_ws(' ', p.first_name, p.last_name, p.company) like '%{value}%'
      aliases: p
 
+   - name   : affiliations
+     filter : af.company like '%{value}%'
+     
    - name   : type
      type   : menu
      menu   :

@@ -37,6 +37,18 @@ columns:
      group_by: true
      default : true
 
+   - name    : affiliations1
+     select  : >
+        if(af.party_type_id =1,
+           af.last_name,
+           af.company)
+     aliases : af
+     default : true
+
+   - name    : affiliations
+     select  : afs.name
+     default : true
+
    - name    : location
      select  : concat_ws(', ', a.city, a.state)
      aliases : a

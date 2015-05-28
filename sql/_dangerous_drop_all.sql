@@ -1,3 +1,4 @@
+drop table if exists party_affiliations;
 drop table if exists party_disciplines;
 drop table if exists disciplines;
 drop table if exists addresses;

@@ -8,6 +8,23 @@ table_joins:
    d:
       require: pd
       clause : left join disciplines d on pd.discipline_id = d.id
+   paf:
+      clause : left join party_affiliations paf on p.id = paf.party_id
+   af:
+      require: paf
+      clause : left join parties af on paf.affiliation_id = af.id
+   afs:
+      clause: >
+         left join (
+            select
+               pa.party_id,
+               group_concat(af.company separator ', ') as name
+            from
+               party_affiliations pa
+               join parties af on pa.affiliation_id = af.id
+            group by
+               pa.party_id
+            ) as afs on p.id = afs.party_id
    ds:
       clause: >
          join (
