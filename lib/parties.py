@@ -18,8 +18,13 @@ class Parties(DataTable):
         self.party_type_id = None # This will get overwritten by subclases
 
     def add(self, record):
-        record2 = odict(created=datetime.now(),
+        # default record
+        record2 = odict(first_name='',
+                        middle_name='',
+                        last_name='',
+                        created=datetime.now(),
                         party_type_id=self.party_type_id)
+
         for k,v in record.items():
             if k == 'party_type':
                 record2.party_type_id = self.partyTypes.getId(v)
