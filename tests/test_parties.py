@@ -5,7 +5,7 @@ import unittest
 
 #from vlib.odict import odict
 
-from parties import Parties
+from parties import Parties, Party
 
 
 # fixtures
@@ -16,10 +16,16 @@ CUSTOMER_LASTNAME = 'Ritell'
 class TestParties(unittest.TestCase):
 
     def testgetList(self):
-        p = Parties()
-        table = p.get()
+        parties = Parties()
+        table = parties.get()
         self.assertIsInstance(table, tuple)
         self.assertTrue(len(table) > 1)
         self.assertIsInstance(table[0], dict)
+
+class TestParty(unittest.TestCase):
+
+    def testgetRecord(self):
+        party = Party(CUSTOMER_ID)
+        self.assertEqual(party.last_name, CUSTOMER_LASTNAME)
 
 unittest.main()

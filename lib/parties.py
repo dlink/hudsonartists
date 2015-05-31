@@ -10,5 +10,7 @@ class Parties(DataTable):
         DataTable.__init__(self, self.db, 'parties')
 
 class Party(DataRecord):
-    pass
 
+    def __init__(self, party_id):
+        self.db = db.getInstance()
+        DataRecord.__init__(self, self.db, 'parties', party_id)
