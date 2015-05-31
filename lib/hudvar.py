@@ -12,7 +12,8 @@ VERBOSE = 0
 
 COMMANDS = {'parties': ['add <field>=<value> [<field>=<value> [...]]',
                         'list'],
-             'party': ['get <party_id>']
+            'party': ['get <party_id>',
+                      'update <party_id> <field>=<value> [<field>=<value> [...]']
             }
 
 class HudvarError(Exception): pass
@@ -38,13 +39,7 @@ class Hudvar(object):
             op = shift(args)
             if op == 'add':
                 validate_num_args('parties add', 1, args)
-                record = {}
-                while args:
-                    arg = shift(args)
-                    if arg.count('=') != 1:
-                        raise HudvarError("arguments must be of the form 'field=value': %s" % arg)
-                    field, value = arg.split('=')
-                    record[field] = value
+                record = args2dict(args)
                 party_id = Parties().add(record)
                 return party_id
 
@@ -61,14 +56,28 @@ class Hudvar(object):
             from parties import Party
             validate_num_args('party', 2, args)
             op = shift(args)
-            party_id = shift(args)
             if op == 'get':
+                party_id = shift(args)
                 return Party(party_id).data
+            elif op == 'update':
+                validate_num_args('party update', 2, args)
+                party_id = shift(args)
+                data = args2dict(args)
+                return Party(party_id).update(data)
             unrecognized_op(cmd, op)
 
         # Fall through
         raise HudvarError('Unrecognized command: %s' % cmd)
 
+def args2dict(args):
+    record = {}
+    while args:
+        arg = shift(args)
+        if arg.count('=') != 1:
+            raise HudvarError("arguments must be of the form 'field=value': %s" % arg)
+        field, value = arg.split('=')
+        record[field] = value
+    return record
 
 def unrecognized_op(cmd, op):
     raise HudvarError('%s: unrecognized op: %s' % (cmd, op))
@@ -94,6 +103,7 @@ def syntax_str():
             else:
                 prefix = '   %s      ' % ws
             o += "%s%s %s\n" % (prefix, command, ops)
+        o += '\n'
     return o
 
 def syntax():

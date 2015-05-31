@@ -42,3 +42,10 @@ class Party(DataRecord):
     def __init__(self, party_id):
         self.db = db.getInstance()
         DataRecord.__init__(self, self.db, 'parties', party_id)
+
+        self.party_id = party_id
+
+    def update(self, data):
+        self.setFilters('id=%s' % self.party_id)
+        self.updateRows(data)
+        return 'Party record updated: %s' % self.party_id
