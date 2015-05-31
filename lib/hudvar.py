@@ -30,11 +30,9 @@ class Hudvar(object):
 
         # parites
 
-        if cmd == 'parites':
-            #from parties import Parties
-            #return parties().list()
-            print 'hi'
-        
+        if cmd == 'parties':
+            from parties import Parties
+            return Parties().get()
 
         # Fall through
 
