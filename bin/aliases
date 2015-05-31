@@ -1,8 +1,10 @@
 export h=$HOME/hudsonartists   ; alias h='cd $h'
-export hb=$h/bin               ; alias hb='cd $hb '
+export hb=$h/bin               ; alias hb='cd $hb'
+export hc=$h/conf              ; alias hc='cd $hc'
 export hl=$h/lib               ; alias hl='cd $hl'
 export hs=$h/sql               ; alias hs='cd $hs'
 export hsd=$hs/data            ; alias hsd='cd $hsd'
+export ht=$h/tests             ; alias ht='cd $ht'
 export hw=$h/web               ; alias hw='cd $hw'
 
 alias hadb='mysql -uhudsonartists -pFireFlower5 -hlocalhost --database=hudsonartists'
