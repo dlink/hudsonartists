@@ -7,4 +7,6 @@ export hsd=$hs/data            ; alias hsd='cd $hsd'
 export ht=$h/tests             ; alias ht='cd $ht'
 export hw=$h/web               ; alias hw='cd $hw'
 
+alias hudvar='$hl/hudvar.py'
+
 alias hadb='mysql -uhudsonartists -pFireFlower5 -hlocalhost --database=hudsonartists'
