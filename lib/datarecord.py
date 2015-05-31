@@ -3,9 +3,9 @@ from vlib.odict import odict
 
 DEBUG = 0
 
-class RecordError(Exception): pass
+class DataRecordError(Exception): pass
 
-class Record(DataTable):
+class DataRecord(DataTable):
     '''Preside over a single Db Record'''
 
     def __init__(self, db, table, id):
@@ -14,7 +14,9 @@ class Record(DataTable):
 
            Meant to be subclassed, as follows:
 
-           class user(Record):
+           from datarecord import DataRecord
+
+           class user(DataRecord):
               def __init__(self, id):
                  Record.__init__(db.getInstance(), 'user', id)
         '''
