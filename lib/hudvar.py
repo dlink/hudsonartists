@@ -49,7 +49,12 @@ class Hudvar(object):
                 return party_id
 
             elif op == 'list':
-                return Parties().get()
+                o = ''
+                p = Parties()
+                o += ','.join(p.table_columns)
+                for row in p.get():
+                    o += ','.join([str(row[c]) for c in p.table_columns]) + '\n'
+                return o
             unrecognized_op(cmd, op)
 
         elif cmd == 'party':
