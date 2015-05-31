@@ -10,7 +10,9 @@ from parties import Parties
 
 VERBOSE = 0
 
-COMMANDS = {'parties': ['list']
+COMMANDS = {'parties': ['add <field>=<value> [<field>=<value> [...]]',
+                        'list'],
+             'party': ['get <party_id>']
             }
 
 class HudvarError(Exception): pass
@@ -32,10 +34,34 @@ class Hudvar(object):
 
         if cmd == 'parties':
             from parties import Parties
-            return Parties().get()
+            validate_num_args('parties', 1, args)
+            op = shift(args)
+            if op == 'add':
+                validate_num_args('parties add', 1, args)
+                record = {}
+                while args:
+                    arg = shift(args)
+                    if arg.count('=') != 1:
+                        raise HudvarError("arguments must be of the form 'field=value': %s" % arg)
+                    field, value = arg.split('=')
+                    record[field] = value
+                party_id = Parties().add(record)
+                return party_id
+
+            elif op == 'list':
+                return Parties().get()
+            unrecognized_op(cmd, op)
+
+        elif cmd == 'party':
+            from parties import Party
+            validate_num_args('party', 2, args)
+            op = shift(args)
+            party_id = shift(args)
+            if op == 'get':
+                return Party(party_id).data
+            unrecognized_op(cmd, op)
 
         # Fall through
-
         raise HudvarError('Unrecognized command: %s' % cmd)
 
 
