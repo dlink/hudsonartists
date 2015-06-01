@@ -9,4 +9,5 @@ export hw=$h/web               ; alias hw='cd $hw'
 
 alias hudvar='$hl/hudvar.py'
 
-alias hadb='mysql -uhudsonartists -pFireFlower5 -hlocalhost --database=hudsonartists'
+alias dhadb='mysql -uhudsonartists -pFireFlower5 -hlocalhost --database=dev_hudsonartists'
+alias phadb='mysql -uhudsonartists -pFireFlower5 -hlocalhost --database=hudsonartists'
