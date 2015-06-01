@@ -58,7 +58,10 @@ class Hudvar(object):
             op = shift(args)
             if op == 'get':
                 party_id = shift(args)
-                return Party(party_id).data
+                p = Party(party_id)
+                p.affiliations # force loading
+                return p.data
+
             elif op == 'update':
                 validate_num_args('party update', 2, args)
                 party_id = shift(args)

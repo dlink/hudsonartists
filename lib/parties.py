@@ -49,3 +49,15 @@ class Party(DataRecord):
         self.setFilters('id=%s' % self.party_id)
         self.updateRows(data)
         return 'Party record updated: %s' % self.party_id
+
+    @lazyproperty
+    def affiliations(self):
+        pa = self.partyAffiliations
+        pa.setColumns('a.company');
+        pa.setFilters('party_id = %s' % self.party_id)
+        self.data['affiliations'] = [r['company'] for r in pa.getTable()]
+        return self.data['affiliations']
+
+    @lazyproperty
+    def partyAffiliations(self):
+        return DataTable(self.db, 'party_affiliations pa join parties a on pa.affiliation_id = a.id')
