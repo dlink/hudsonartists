@@ -40,7 +40,7 @@ class DataRecord(DataTable):
         self.setFilters('id=%s' % self.id)
         results = self.getTable()
         if not results:
-            raise RecordError('%s table: Record not found, Id: %s' %
+            raise DataRecordError('%s table: Record not found, Id: %s' %
                               (self.table.title(), self.id))
 
         # store data in a dictionary
