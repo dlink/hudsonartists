@@ -59,6 +59,7 @@ class Hudvar(object):
             if op == 'get':
                 party_id = shift(args)
                 p = Party(party_id)
+                p.disciplines # force loading
                 p.affiliations # force loading
                 return p.data
 
