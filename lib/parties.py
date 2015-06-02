@@ -22,12 +22,14 @@ class Parties(DataTable):
         record2 = odict(first_name='',
                         middle_name='',
                         last_name='',
+                        company='',
                         created=datetime.now(),
                         party_type_id=self.party_type_id)
 
 
         # pull out discipline data from record
         disciplines = _removeDiscipline(record)
+        affiliations = _removeAffiliation(record)
 
         # create parties record
         for k,v in record.items():
@@ -37,8 +39,10 @@ class Parties(DataTable):
                 record2[k] = v
         party_id = self.insertRow(record2)
 
-        # create party discipline records
-        Party(party_id).updateDisciplines(disciplines)
+        # create party discipline and party affilation records
+        party = Party(party_id)
+        party.updateDisciplines(disciplines)
+        party.updateAffiliations(affiliations)
 
         return 'Party record created: %s' % party_id
 
@@ -57,12 +61,13 @@ class Party(DataRecord):
     def update(self, data):
 
         disciplines = _removeDiscipline(data)
-
+        affiliations = _removeAffiliation(data)
         if data:
             self.setFilters('id=%s' % self.party_id)
             self.updateRows(data)
 
         self.updateDisciplines(disciplines)
+        self.updateAffiliations(affiliations)
 
         return 'Party record updated: %s' % self.party_id
 
@@ -87,6 +92,28 @@ class Party(DataRecord):
                            discipline_id=discipline_id,
                            created=datetime.now())
             partyDisciplines.insertRow(record)
+        return 1
+
+    def updateAffiliations(self, affiliation_list):
+        '''Operates on list of ids, not codes'''
+
+        # check if anything changed:
+        if set(affiliation_list) == set(self.affiliations):
+            return 0
+
+        # Init Datatables:
+        partyAffiliations = DataTable(self.db, 'party_affiliations')
+
+        # remove all affiliations for this party
+        partyAffiliations.setFilters({'party_id': self.party_id})
+        partyAffiliations.deleteRows()
+
+        # add list of affiliations
+        for affiliation_id in affiliation_list:
+            record = odict(party_id=self.party_id,
+                           affiliation_id=affiliation_id,
+                           created=datetime.now())
+            partyAffiliations.insertRow(record)
         return 1
 
     @lazyproperty
@@ -129,3 +156,11 @@ def _removeDiscipline(record):
     else:
         disciplines = []
     return disciplines
+
+def _removeAffiliation(record):
+    if 'affiliation' in record:
+        affiliations = record['affiliation'].split(',')
+        del record['affiliation']
+    else:
+        affiliations = []
+    return affiliations
