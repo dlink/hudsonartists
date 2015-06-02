@@ -16,7 +16,7 @@ create table parties (
   last_updated      timestamp         not null
 	default current_timestamp on update current_timestamp ,
 
-  unique key name (first_name, middle_name, last_name),
+  unique key name (first_name, middle_name, last_name, company),
   foreign key (party_type_id)  references party_types (id)
 )
 engine InnoDB default charset=utf8;
