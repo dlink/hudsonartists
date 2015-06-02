@@ -8,7 +8,7 @@ create table parties (
   first_name        varchar(255)      not null ,
   middle_name       varchar(255)      not null ,
   last_name         varchar(255)      not null ,
-  company           varchar(255)      ,
+  company           varchar(255)      not null ,
   email             varchar(255)      ,
   website           varchar(255)      ,
 
