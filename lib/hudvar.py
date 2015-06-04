@@ -25,6 +25,15 @@ class Hudvar(object):
         self.verbose = verbose
 
     def process(self, args):
+        try:
+            # TO DO: add database transaction block
+            return self.processCandy(args)
+        except Exception, e:
+            if verbose:
+                raise
+            return "%s: %s" % (e.__class__.__name__, e)
+
+    def processCandy(self, args):
         '''Parse arguments and act upon them'''
         if not args:
             syntax()
@@ -133,11 +142,5 @@ if __name__ == '__main__':
 
     # Do it
     hudvar = Hudvar(verbose=verbose)
-    try:
-        print pretty(hudvar.process(args))
-    except Exception, e:
-        if verbose:
-            raise
-        print "%s: %s" % (e.__class__.__name__, e)
-
+    print pretty(hudvar.process(args))
 
