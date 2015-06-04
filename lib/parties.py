@@ -26,7 +26,6 @@ class Parties(DataTable):
                         created=datetime.now(),
                         party_type_id=self.party_type_id)
 
-
         # pull out discipline data from record
         disciplines = _removeDiscipline(record)
         affiliations = _removeAffiliation(record)
@@ -74,7 +73,7 @@ class Party(DataRecord):
     def updateDisciplines(self, discipline_list):
 
         # check if anything changed:
-        if set(discipline_list) == set(self.disciplines):
+        if not discipline_list or set(discipline_list) == set(self.disciplines):
             return 0
 
         # Init Datatables:
@@ -98,7 +97,7 @@ class Party(DataRecord):
         '''Operates on list of ids, not codes'''
 
         # check if anything changed:
-        if set(affiliation_list) == set(self.affiliations):
+        if not affiliation_list or set(affiliation_list) == set(self.affiliations):
             return 0
 
         # Init Datatables:
