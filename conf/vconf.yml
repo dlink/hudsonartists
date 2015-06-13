@@ -1,0 +1,7 @@
+database:
+   engine: mysql
+   host  : localhost
+   user  : hudsonartists
+   passwd: FireFlower5
+   db    : hudsonartists
+   dictcursor: true
