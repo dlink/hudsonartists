@@ -1,7 +1,7 @@
 id,code,name,description,active,create
-1,ceram,Ceramics,Ceramics,1,2015-01-11
-2,paint,Painting,Painting,1,2015-01-11
-3,photo,Photography,Photography,1,2015-01-11
-4,sculpt,Sculpture,Sculpture,1,2015-01-11
-5,digit,Digital,Digital,1,2015-01-24
+1,ceramics,Ceramics,Ceramics,1,2015-01-11
+2,painting,Painting,Painting,1,2015-01-11
+3,photography,Photography,Photography,1,2015-01-11
+4,sculpture,Sculpture,Sculpture,1,2015-01-11
+5,digital,Digital,Digital,1,2015-01-24
 6,glass,Glass,Glass,1,2015-01-24

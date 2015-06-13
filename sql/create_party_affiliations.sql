@@ -3,7 +3,7 @@ set foreign_key_checks = 0;
 drop table /*! if exists */ party_affiliations;
 
 create table party_affiliations (
-    id             integer unsigned  not null primary key,
+    id             integer unsigned  not null auto_increment primary key,
     party_id       integer unsigned  not null,
     affiliation_id integer unsigned  not null,
 
