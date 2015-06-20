@@ -4,11 +4,14 @@ import os
 import sys
 import copy
 
+from vlib import db
 from vlib.utils import pretty, shift, validate_num_args
 
 from parties import Parties
 
 VERBOSE = 0
+
+DEBUG = 0 
 
 COMMANDS = {'parties': ['add <field>=<value> [<field>=<value> [...]]',
                         'list'],
@@ -21,8 +24,13 @@ class HudvarError(Exception): pass
 class Hudvar(object):
     '''Hudvar system Seerver'''
 
-    def __init__(self, verbose=VERBOSE):
+    def __init__(self, verbose=VERBOSE, debug=DEBUG):
         self.verbose = verbose
+        self.debug = debug
+
+        if self.debug:
+            self.db = db.getInstance()
+            self.db.debug_sql = 1
 
     def process(self, args):
         try:
@@ -112,7 +120,7 @@ def syntax_str():
         for ops in COMMANDS[command]:
             ln += 1
             if ln == 1:
-                prefix = '   %s [-v] ' % progname
+                prefix = '   %s [-v] [-d] ' % progname
             else:
                 prefix = '   %s      ' % ws
             o += "%s%s %s\n" % (prefix, command, ops)
@@ -140,7 +148,14 @@ if __name__ == '__main__':
         p = args.index('-v')
         args = args[0:p]+args[p+1:]
 
+    # debug sql?
+    debug = 0
+    if '-d' in args:
+        debug = 1
+        args.remove('-d')
+
     # Do it
-    hudvar = Hudvar(verbose=verbose)
+    hudvar = Hudvar(verbose=verbose, debug=debug)
     print pretty(hudvar.process(args))
 
+        
