@@ -28,7 +28,7 @@ class Hudvar(object):
         self.verbose = verbose
         self.debug = debug
 
-        if self.debug == 1:
+        if self.debug:
             self.db = db.getInstance()
             self.db.debug_sql = 1
 
@@ -120,7 +120,7 @@ def syntax_str():
         for ops in COMMANDS[command]:
             ln += 1
             if ln == 1:
-                prefix = '   %s [-v] ' % progname
+                prefix = '   %s [-v] [-d] ' % progname
             else:
                 prefix = '   %s      ' % ws
             o += "%s%s %s\n" % (prefix, command, ops)
@@ -153,10 +153,6 @@ if __name__ == '__main__':
     if '-d' in args:
         debug = 1
         args.remove('-d')
-
-###Is there some reason why this is a better method than list.remove(element)?
-        #p = args.index('-d')
-        #args = args[0:p]+args[p+1:]
 
     # Do it
     hudvar = Hudvar(verbose=verbose, debug=debug)
