@@ -5,3 +5,4 @@ source create_addresses.sql
 source create_disciplines.sql
 source create_party_disciplines.sql
 source create_party_affiliations.sql
+source create_phones.sql
