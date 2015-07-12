@@ -47,6 +47,7 @@ columns:
            af.last_name,
            af.company)
      aliases : af
+     group_by: true
 
    - name    : location
      select  : concat_ws(', ', a.city, a.state)
