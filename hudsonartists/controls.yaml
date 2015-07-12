@@ -27,3 +27,17 @@ controls:
         5: Digital
         6: Glass
      filter : d.id = {value}
+
+   - name: created_min
+     display: Added on or After
+     type: date
+     #filter: convert_tz(o.order_date , 'UTC', 'US/Eastern') >= '{value}'
+     filter: p.created >= '{value}'
+
+   - name: created_max
+     display: Added on or Before
+     type: date
+     #filter: date(convert_tz(o.order_date, 'UTC', 'US/Eastern')) <= '{value}'
+     filter: p.created <= '{value}'
+     aliases: o
+     default: ""
