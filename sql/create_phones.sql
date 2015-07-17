@@ -14,7 +14,7 @@ create table phones (
         default current_timestamp on update current_timestamp ,
 
   foreign key (party_id) references parties (id),
-  foreign key (phone_type_id) references phone_type (id)
+  foreign key (phone_type_id) references phone_types (id)
 
 ) 
 engine InnoDB default charset=utf8;
