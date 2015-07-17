@@ -49,6 +49,13 @@ columns:
      aliases : af
      group_by: true
 
+   - name    : address_id
+     select  : a.id
+
+   - name    : address
+     select  : concat_ws(', ', a.address1, a.address2, a.city, a.state, a.zipcode)
+     aliases : a
+
    - name    : location
      select  : concat_ws(', ', a.city, a.state)
      aliases : a
