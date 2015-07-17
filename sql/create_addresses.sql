@@ -3,7 +3,7 @@ set foreign_key_checks = 0;
 drop table /*! if exists */ addresses;
 
 create table addresses (
-  id                integer unsigned  not null  primary key ,
+  id                integer unsigned  not null auto_increment primary key,
   party_id          integer unsigned  not null,
   address1          varchar(255)      ,
   address2          varchar(255)      ,
