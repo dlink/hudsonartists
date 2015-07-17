@@ -16,7 +16,7 @@ create table addresses (
   last_updated      timestamp         not null 
         default current_timestamp on update current_timestamp ,
 
-  foreign key (party_id)  references addresses (id)
+  foreign key (party_id)  references parties (id)
 ) 
 engine InnoDB default charset=utf8;
 ;
