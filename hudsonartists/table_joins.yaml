@@ -3,6 +3,11 @@ table_joins:
       clause: join party_types pt on p.party_type_id = pt.id
    a:
       clause: left join addresses a on p.id = a.party_id
+   ph:
+      clause: left join phones ph on p.id = ph.party_id
+   pht:
+      require: ph
+      clause: left join phone_types pht on ph.phone_type_id = pht.id
    pd:
       clause: left join party_disciplines pd on p.id = pd.party_id
    d:

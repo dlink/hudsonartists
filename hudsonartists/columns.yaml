@@ -49,8 +49,27 @@ columns:
      aliases : af
      group_by: true
 
+   - name    : phone_type_id
+     select  : pht.id
+     minor   : True
+
+   - name    : phone_type_code
+     select  : pht.code
+     minor   : True
+
+   - name    : phone_type
+     select  : pht.name
+
+   - name    : phone_id
+     select  : ph.id
+     minor   : True
+
+   - name    : phone
+     select  : ph.number
+
    - name    : address_id
      select  : a.id
+     minor   : True
 
    - name    : address
      select  : concat_ws(', ', a.address1, a.address2, a.city, a.state, a.zipcode)
