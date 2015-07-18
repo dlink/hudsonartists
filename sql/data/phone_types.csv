@@ -1,6 +1,7 @@
 id,code,name,description,active,created
 0,unknown,Unknown,Unknown,1,2015-01-11
-1,mobile,Mobile,Mobile Phone,1,2015-01-11
-2,home,Home,Home Phone,1,2015-01-11
-3,work,Work,Mobile Phone,1,2015-01-11
-4,fax,Fax,Fax,1,2015-01-11
+1,main,Main,Main Phone,1,2015-07-17
+2,mobile,Mobile,Mobile Phone,1,2015-01-11
+3,home,Home,Home Phone,1,2015-01-11
+4,work,Work,Mobile Phone,1,2015-01-11
+5,fax,Fax,Fax,1,2015-01-11
