@@ -96,6 +96,9 @@ columns:
      aliases : p
      default : true
 
+   - name    : created_datetime
+     select  : p.created
+
    - name    : last_updated
 
    - name   : count
