@@ -9,6 +9,7 @@ display_num_rows: 100
 sort_by         : name:asc
 
 database:
+   engine: mysql
    host  : localhost
    user  : hudsonartists
    passwd: FireFlower5
