@@ -5,6 +5,7 @@ columns:
      type    : separator
 
    - name    : id
+     default : true
 
    - name    : name
      select  : >
@@ -38,7 +39,8 @@ columns:
      default : true
 
    - name    : affiliations
-     select  : afs.name
+     select  : left(afs.name, 30)
+     aliases : afs
      default : true
 
    - name    : affiliation
