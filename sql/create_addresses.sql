@@ -21,6 +21,10 @@ create table addresses (
 engine InnoDB default charset=utf8;
 ;
 
+create trigger addresses_create before insert on addresses
+   for each row set new.created = now()
+;
+
 load data local infile 'data/addresses.csv' into table addresses
 fields terminated by ',' optionally enclosed by '"' ignore 1 lines;
 

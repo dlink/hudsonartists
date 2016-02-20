@@ -17,6 +17,10 @@ create table party_affiliations (
 engine InnoDB default charset=utf8;
 ;
 
+create trigger party_affiliations_create before insert on party_affiliations
+   for each row set new.created = now()
+;
+
 load data local infile 'data/party_affiliations.csv' into table party_affiliations
 fields terminated by ',' optionally enclosed by '"' ignore 1 lines;
 
