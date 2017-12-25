@@ -15,7 +15,7 @@ class NoData(HtmlPage):
         self.header = Header(self.title)
 
         self.style_sheets.extend([
-            'css/main.css',
+            'css/vreports.css',
             ])
 
     def getHtmlContent(self):
