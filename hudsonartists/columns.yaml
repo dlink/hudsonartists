@@ -39,7 +39,7 @@ columns:
      default : true
 
    - name    : affiliations
-     select  : left(afs.name, 30)
+     select  : left(afs.name, 40)
      aliases : afs
      default : true
 
